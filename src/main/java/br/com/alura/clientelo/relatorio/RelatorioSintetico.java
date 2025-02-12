@@ -2,7 +2,9 @@ package br.com.alura.clientelo.relatorio;
 
 import br.com.alura.clientelo.pedido.Pedido;
 import br.com.alura.clientelo.utils.FormatUtils;
+import lombok.Data;
 import lombok.Getter;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigDecimal;
@@ -11,6 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 @Slf4j
+@Getter
 public class RelatorioSintetico {
 
     private final int quantidadeDePedidos;

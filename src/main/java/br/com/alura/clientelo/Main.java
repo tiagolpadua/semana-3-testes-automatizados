@@ -6,6 +6,7 @@ import br.com.alura.clientelo.relatorio.RelatorioSintetico;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -42,8 +43,5 @@ public class Main {
             RelatorioSintetico relatorioSintetico = RelatorioSintetico.geraRelatorio(pedidos);
             relatorioSintetico.exibir();
         }
-
-
-
     }
 }
