@@ -2,6 +2,7 @@ package br.com.alura.clientelo;
 
 import br.com.alura.clientelo.arquivo.*;
 import br.com.alura.clientelo.pedido.Pedido;
+import br.com.alura.clientelo.relatorio.RelatorioService;
 import br.com.alura.clientelo.relatorio.RelatorioSintetico;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,11 +40,9 @@ public class Main {
             ProcessadorDeArquivo processadorDeArquivo = new ProcessadorDeArquivo();
             List<Pedido> pedidos = processadorDeArquivo.processaArquivo(NOMES.get(opcaoDoArquivo), EXTRATORES.get(opcaoDoArquivo));
 
-            RelatorioSintetico relatorioSintetico = RelatorioSintetico.geraRelatorio(pedidos);
-            relatorioSintetico.exibir();
+            RelatorioService relatorioService = new RelatorioService();
+            RelatorioSintetico relatorioSintetico =  relatorioService.geraRelatorio(pedidos);
+            relatorioService.exibir(relatorioSintetico);
         }
-
-
-
     }
 }
