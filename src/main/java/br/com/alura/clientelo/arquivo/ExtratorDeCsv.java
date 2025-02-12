@@ -1,6 +1,5 @@
 package br.com.alura.clientelo.arquivo;
 
-import br.com.alura.clientelo.pedido.Pedido;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 

@@ -2,7 +2,6 @@ package br.com.alura.clientelo.relatorio;
 
 import br.com.alura.clientelo.pedido.Pedido;
 import br.com.alura.clientelo.utils.FormatUtils;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigDecimal;
@@ -46,9 +45,9 @@ public class RelatorioSintetico {
             }
 
             montanteDeVendas = montanteDeVendas.add(pedidoAtual.getValorTotal());
-            totalDeProdutosVendidos += pedidoAtual.getQuantidade();
+            totalDeProdutosVendidos += pedidoAtual.quantidade();
 
-            categoriasProcessadas.add(pedidoAtual.getCategoria());
+            categoriasProcessadas.add(pedidoAtual.categoria());
         }
 
         return new RelatorioSintetico(
@@ -73,8 +72,8 @@ public class RelatorioSintetico {
         log.info("MONTANTE DE VENDAS: {}", FormatUtils.formataParaReal(montanteDeVendas));
         System.out.println();
 
-        log.info("PEDIDO MAIS BARATO: {} ({})", FormatUtils.formataParaReal(pedidoMaisBarato.getValorTotal()), pedidoMaisBarato.getProduto());
-        log.info("PEDIDO MAIS CARO: {} ({})\n", FormatUtils.formataParaReal(pedidoMaisCaro.getValorTotal()), pedidoMaisCaro.getProduto());
+        log.info("PEDIDO MAIS BARATO: {} ({})", FormatUtils.formataParaReal(pedidoMaisBarato.getValorTotal()), pedidoMaisBarato.produto());
+        log.info("PEDIDO MAIS CARO: {} ({})\n", FormatUtils.formataParaReal(pedidoMaisCaro.getValorTotal()), pedidoMaisCaro.produto());
         System.out.println();
 
         log.info("### FIM DO RELATÓRIO ###");
