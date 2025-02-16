@@ -1,6 +1,3 @@
-Aqui está o README atualizado com as alterações que você pediu:
-
-```markdown
 # Desafio - Testes Automatizados no Sistema de Relatório de Pedidos ✅
 
 ## 🎯 Objetivo do Desafio
@@ -41,6 +38,3 @@ O objetivo deste desafio é praticar a implementação de testes automatizados n
 💡 **Dica:** Utilize `TDD` sempre que possível e siga a pirâmide de testes para balancear testes unitários, de integração e de aceitação.
 
 🚀 **Mãos à obra!** Escreva seus testes e garanta um código mais confiável! ✅
-```
-
-Agora o tópico sobre cobertura de código virou um desafio, e os pontos de avaliação foram renomeados para "Pontos de Atenção". Tudo pronto para os alunos colocarem a mão na massa! 🚀

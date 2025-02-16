@@ -42,8 +42,5 @@ public class Main {
             RelatorioSintetico relatorioSintetico = RelatorioSintetico.geraRelatorio(pedidos);
             relatorioSintetico.exibir();
         }
-
-
-
     }
 }
