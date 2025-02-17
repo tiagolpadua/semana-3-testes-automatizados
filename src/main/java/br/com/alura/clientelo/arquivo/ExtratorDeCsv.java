@@ -11,6 +11,7 @@ public class ExtratorDeCsv implements ExtratorDePedidos {
 
     @Override
     public List<PedidoArquivo> extraiPedidos(InputStream stream) throws Exception {
+        System.out.println(">>> stream: " + stream);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
             CsvToBean<PedidoArquivo> build = new CsvToBeanBuilder<PedidoArquivo>(reader)
                     .withSeparator(',')

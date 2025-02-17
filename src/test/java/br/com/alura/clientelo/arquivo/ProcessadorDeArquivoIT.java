@@ -10,20 +10,19 @@ import org.junit.jupiter.api.Test;
 
 import br.com.alura.clientelo.pedido.Pedido;
 
-class ProcessadorDeArquivoIntegrationTestIT {
-
+class ProcessadorDeArquivoIT {
     private ProcessadorDeArquivo processadorDeArquivo;
-    private ExtratorDePedidos extratorDePedidos;
 
     @BeforeEach
     void setUp() {
         processadorDeArquivo = new ProcessadorDeArquivo();
+        processadorDeArquivo.setStreamFetcher(new StreamFetcher());
     }
 
     @Test
     void testProcessaArquivoComSucesso() throws Exception {
         String nomeDoArquivo = "pedidos.csv";
-        extratorDePedidos = new ExtratorDeCsv();
+        var extratorDePedidos = new ExtratorDeCsv();
 
         List<Pedido> pedidos = processadorDeArquivo.processaArquivo(nomeDoArquivo, extratorDePedidos);
 
@@ -35,7 +34,9 @@ class ProcessadorDeArquivoIntegrationTestIT {
     void testProcessaArquivoComArquivoNaoEncontrado() {
         String nomeDoArquivo = "arquivo_inexistente.csv";
 
-        extratorDePedidos = new ExtratorDeCsv();
+        var extratorDePedidos = new ExtratorDeCsv();
+
+        processadorDeArquivo.setStreamFetcher(new StreamFetcher());
 
         Exception exception = assertThrows(Exception.class, () -> {
             processadorDeArquivo.processaArquivo(nomeDoArquivo, extratorDePedidos);

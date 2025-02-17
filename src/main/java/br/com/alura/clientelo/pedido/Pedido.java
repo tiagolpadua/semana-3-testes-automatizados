@@ -1,9 +1,12 @@
 package br.com.alura.clientelo.pedido;
 
+import lombok.EqualsAndHashCode;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 
+@EqualsAndHashCode
 public class Pedido {
 
     private String categoria;

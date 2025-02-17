@@ -38,6 +38,8 @@ public class Main {
             }
 
             ProcessadorDeArquivo processadorDeArquivo = new ProcessadorDeArquivo();
+            processadorDeArquivo.setStreamFetcher(new StreamFetcher());
+
             List<Pedido> pedidos = processadorDeArquivo.processaArquivo(NOMES.get(opcaoDoArquivo), EXTRATORES.get(opcaoDoArquivo));
 
             RelatorioService relatorioService = new RelatorioService();
